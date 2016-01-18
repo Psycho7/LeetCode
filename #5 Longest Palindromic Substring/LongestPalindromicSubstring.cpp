@@ -5,6 +5,9 @@ public:
         int left = 0;
         int len = s.length();
         for (int i = 0; i < len; i++) {
+            if (i > 0 && s[i - 1] == s[i]) {
+                continue;
+            }
             int head = i, size = 1;
             while((head + size < len) &&  (s[head] == s[head + size]))
                 size++;
